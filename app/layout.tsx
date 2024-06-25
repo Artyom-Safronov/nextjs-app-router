@@ -1,13 +1,8 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import { Container } from "@mui/material";
-import { Header } from "./Header";
 import styles from "./styles.module.scss";
-import { Content } from "./Content";
-import { Footer } from "./Footer";
-
-const inter = Inter({ subsets: ["latin"] });
+import { inter } from "@/font";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -33,3 +28,27 @@ export default function RootLayout({
     </html>
   );
 }
+
+const Header = () => {
+  return (
+    <header className={styles.header}>
+      <Container>Header</Container>
+    </header>
+  );
+};
+
+type ContentProps = {
+  children: JSX.Element;
+};
+
+const Content = ({ children }: ContentProps) => {
+  return <div className={styles.page}>{children}</div>;
+};
+
+const Footer = () => {
+  return (
+    <footer className={styles.footer}>
+      <Container>Footer</Container>
+    </footer>
+  );
+};
