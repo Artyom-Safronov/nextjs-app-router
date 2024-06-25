@@ -1,0 +1,70 @@
+.cardImage {
+  position: relative;
+  background-color: #eee;
+
+  & img {
+    width: 80%;
+    height: auto;
+  }
+}
+
+.previewBlock {
+  width: 100px;
+  height: 100%;
+  // position: absolute;
+  left: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.previewItem {
+  width: 100px;
+  height: 100px;
+  background-color: darkcyan;
+  border-radius: 4px;
+}
+
+.cardInfo {
+  padding: 20px;
+  background-color: #fff;
+}
+
+.sizeControl {
+  height: 80px;
+  margin-top: 16px;
+  background-color: cadetblue;
+}
+
+.optionsControl {
+  height: 120px;
+  margin-top: 16px;
+  background-color: burlywood;
+}
+
+.advantages {
+  margin: 16px 0;
+}
+
+.advantage {
+  width: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.suggestions {
+}
+
+.suggestion {
+  width: 25%;
+}
+
+.suggestionPreview {
+  width: 100%;
+  height: 300px;
+  background-color: #eee;
+  border-radius: 4px;
+}
