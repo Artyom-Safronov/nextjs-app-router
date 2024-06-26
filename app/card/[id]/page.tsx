@@ -1,5 +1,17 @@
 import { Box, Button, Grid, Stack, Typography } from "@mui/material";
 import styles from "./styles.module.scss";
+import { faker } from "@faker-js/faker";
+import { Slide, Slider } from "@/components/slider/Slider";
+
+export const fakeGoodImages: Slide[] = Array(4)
+  .fill(null)
+  .map((element) => {
+    const image = faker.image.urlPicsumPhotos({ blur: 1, grayscale: true });
+    return {
+      thumbnailSrc: image,
+      fullImageSrc: image,
+    };
+  });
 
 const Card = () => {
   return (
@@ -8,28 +20,7 @@ const Card = () => {
       <Box sx={{ flexGrow: 1 }}>
         <Grid container height={500}>
           <Grid xs={8}>
-            <Box sx={{ height: "100%" }} className={styles.cardImage}>
-              <Stack
-                sx={{ height: "100%" }}
-                direction={"row"}
-                spacing={2}
-                justifyContent={"space-around"}
-                alignItems={"center"}
-              >
-                <Stack
-                  className={styles.previewBlock}
-                  direction={"column"}
-                  spacing={2}
-                  justifyContent={"space-around"}
-                >
-                  <div className={styles.previewItem}>thumb</div>
-                  <div className={styles.previewItem}>thumb</div>
-                  <div className={styles.previewItem}>thumb</div>
-                  <div className={styles.previewItem}>thumb</div>
-                </Stack>
-                <img src="/sneacker-2.png" alt="sneacker" />
-              </Stack>
-            </Box>
+            <Slider slides={fakeGoodImages} />
           </Grid>
           <Grid xs={4}>
             <Box sx={{ height: "100%" }} className={styles.cardInfo}>

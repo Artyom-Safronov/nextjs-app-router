@@ -5,6 +5,7 @@ import { inter } from "../font";
 const preview: Preview = {
   parameters: {
     controls: {
+      // exclude: ["slides"],
       matchers: {
         color: /(background|color)$/i,
         date: /Date$/i,
@@ -14,9 +15,9 @@ const preview: Preview = {
   decorators: [
     (Story) => {
       return (
-        <body className={inter.className}>
+        // <body className={inter.className}>
           <Story />
-        </body>
+        // </body>
       )
     }
   ]

@@ -1,0 +1,23 @@
+.previewItem {
+  display: flex;
+  width: 100px;
+  height: 100px;
+  border-radius: 8px;
+  box-sizing: content-box;
+  overflow: hidden;
+  cursor: pointer;
+  border-style: solid;
+  border-width: 2px;
+  border-color: transparent;
+
+  &[data-selected="true"] {
+    border-color: black;
+  }
+
+  & > img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    margin: auto;
+  }
+}
