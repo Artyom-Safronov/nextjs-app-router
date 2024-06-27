@@ -4,6 +4,18 @@ import { faker } from "@faker-js/faker";
 import { Slide, Slider } from "@/components/slider/Slider";
 import { GoodFingerprint } from "@/components/good-fingerprint/GoodFingerprint";
 
+export const fakeGoods = Array(20)
+  .fill(null)
+  .map((element) => {
+    const image = faker.image.urlPicsumPhotos({ blur: 1, grayscale: true });
+    return {
+      imageSrc: image,
+      name: faker.commerce.productName(),
+      brand: faker.company.name(),
+      price: faker.commerce.price({dec: 0})
+    };
+  });
+
 export const fakeGoodImages: Slide[] = Array(4)
   .fill(null)
   .map((element) => {
