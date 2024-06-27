@@ -9,6 +9,10 @@ const meta: Meta<typeof Price> = {
     controls: {},
   },
   decorators: [],
+  args: {
+    value: '100',
+    oldPrice: '200'
+  }
 };
 
 export default meta;
