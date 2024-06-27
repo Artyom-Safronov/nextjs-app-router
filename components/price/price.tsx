@@ -1,4 +1,3 @@
-import { Typography } from "@mui/material";
 import styles from "./styles.module.scss";
 
 type PriceProps = {
@@ -10,22 +9,23 @@ type PriceProps = {
 const currency = {
   usd: {
     short: "$",
-    full: "usd",
+    full: "usd"
   },
   eur: {
     short: "€",
-    full: "eur",
-  },
-};
+    full: "eur"
+  }
+}
 
 export const Price = ({ value, oldPrice, short = true }: PriceProps) => {
   return (
     <div>
-      <Typography variant="h6" component={"span"} fontWeight={500}>
+      <span className={styles.mainPrice}>
         <span>{currency.usd.short}</span>
-        {value}
-      </Typography>
-      <Typography component={"sup"} color={"grey.500"} className={styles.oldPrice}>{currency.usd.short}{oldPrice}</Typography>
+        <span>{value}</span>
+      </span>
+      {oldPrice && <sup className={styles.oldPrice}>{currency.usd.short}{oldPrice}</sup>}
     </div>
   );
 };
+
