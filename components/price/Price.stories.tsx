@@ -9,15 +9,6 @@ const meta: Meta<typeof Price> = {
     controls: {},
   },
   decorators: [],
-  argTypes: {
-    // variant: {
-    //   control: "select",
-    //   options: ["standard", "filled", "outlined"],
-    // },
-  },
-  args: {
-    value: "100",
-  },
 };
 
 export default meta;

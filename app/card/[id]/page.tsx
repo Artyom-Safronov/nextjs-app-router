@@ -2,6 +2,7 @@ import { Box, Button, Grid, Stack, Typography } from "@mui/material";
 import styles from "./styles.module.scss";
 import { faker } from "@faker-js/faker";
 import { Slide, Slider } from "@/components/slider/Slider";
+import { GoodFingerprint } from "@/components/good-fingerprint/GoodFingerprint";
 
 export const fakeGoodImages: Slide[] = Array(4)
   .fill(null)
@@ -24,8 +25,9 @@ const Card = () => {
           </Grid>
           <Grid xs={4}>
             <Box sx={{ height: "100%" }} className={styles.cardInfo}>
-              <Typography>Brand</Typography>
-              <Typography>Good name</Typography>
+              {/* <Typography>Brand</Typography>
+              <Typography>Good name</Typography> */}
+              <GoodFingerprint brand="" name="" />
               <Typography>Price $</Typography>
               <Typography>Max two string truncated description</Typography>
               <div className={styles.sizeControl}>Size Control</div>
