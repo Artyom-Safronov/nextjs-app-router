@@ -21,11 +21,6 @@ const currency = {
 export const Price = ({ value, oldPrice, short = true }: PriceProps) => {
   return (
     <div>
-      {/* <div className={styles.mainPrice}>
-        <span>{currency.usd.short}</span>
-        <span>{value}</span>
-      </div>
-      {oldPrice && <sup className={styles.oldPrice}>{oldPrice}</sup>} */}
       <Typography variant="h6" component={"span"} fontWeight={500}>
         <span>{currency.usd.short}</span>
         {value}

@@ -29,7 +29,7 @@ export const Select = ({ label, link, options }: SelectProps) => {
       <FormControl sx={{ width: "100%" }}>
         <MuiSelect
           labelId="size-select-label"
-          defaultValue={options[0].id}
+          defaultValue={options[0]?.id}
           label="Age"
           input={<OutlinedInput />}
         >
