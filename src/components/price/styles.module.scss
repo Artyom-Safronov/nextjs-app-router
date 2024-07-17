@@ -1,0 +1,8 @@
+.priceContainer {
+  display: flex;
+
+  .oldPrice {
+    text-decoration: line-through;
+    margin-left: 4px;
+  }
+}

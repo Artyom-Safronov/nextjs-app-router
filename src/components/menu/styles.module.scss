@@ -1,0 +1,10 @@
+.link {
+  white-space: nowrap;
+  border-radius: 0px;
+  cursor: pointer;
+  transition: .2s;
+
+  &:hover {
+    background-color: #f0efef;
+  }
+}

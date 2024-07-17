@@ -3,6 +3,10 @@ import styles from "./styles.module.scss";
 import { faker } from "@faker-js/faker";
 import { Slide, Slider } from "@/components/slider/Slider";
 import { GoodFingerprint } from "@/components/good-fingerprint/GoodFingerprint";
+import { Price } from "@/components/price/price";
+import { TruncatedText } from "@/components/truncated-text/TruncatedText";
+import { SizeSelect } from "@/components/size-select/SizeSelect";
+import { ProductCard } from "@/components/product-card/ProductCard";
 
 export const fakeGoods = Array(20)
   .fill(null)
@@ -31,18 +35,16 @@ const Card = () => {
     <Box>
       <Typography variant="h5">Card</Typography>
       <Box sx={{ flexGrow: 1 }}>
-        <Grid container height={500}>
+        <Grid container>
           <Grid xs={8}>
-            <Slider slides={fakeGoodImages} />
+            <Slider slides={fakeGoodImages} position="bottom" />
           </Grid>
           <Grid xs={4}>
             <Box sx={{ height: "100%" }} className={styles.cardInfo}>
-              {/* <Typography>Brand</Typography>
-              <Typography>Good name</Typography> */}
-              <GoodFingerprint brand="" name="" />
-              <Typography>Price $</Typography>
-              <Typography>Max two string truncated description</Typography>
-              <div className={styles.sizeControl}>Size Control</div>
+              <GoodFingerprint brand={fakeGoods[0].brand} name={fakeGoods[0].name} />
+              <Price value={fakeGoods[0].price} oldPrice={"300"} />
+              <TruncatedText lines={2} />
+              <SizeSelect />
               <div className={styles.optionsControl}>
                 Available options control
               </div>
@@ -94,7 +96,7 @@ const Card = () => {
           justifyContent={"space-around"}
           sx={{ marginTop: 2 }}
         >
-          <div className={styles.suggestion}>
+          {/* <div className={styles.suggestion}>
             <div className={styles.suggestionPreview}></div>
             <div className={styles.suggestionInfo}>
               <Typography className={styles.suggestionInfo}>
@@ -149,7 +151,12 @@ const Card = () => {
                 suggestion price
               </Typography>
             </div>
-          </div>
+          </div> */}
+          {fakeGoods.slice(0, 4).map(good => {
+            return (
+              <ProductCard {...good} />
+            )
+          })}
         </Stack>
       </Box>
     </Box>

@@ -4,6 +4,7 @@ import { inter } from "../font";
 
 const preview: Preview = {
   parameters: {
+    layout: "centered",
     controls: {
       // exclude: ["slides"],
       matchers: {

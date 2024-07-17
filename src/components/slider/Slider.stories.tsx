@@ -12,15 +12,15 @@ const meta: Meta<typeof Slider> = {
     },
   },
   decorators: [],
-  // argTypes: {
-  //   position: {
-  //     control: "select",
-  //     options: ["top", "right", "bottom", "left"],
-  //   }
-  // },
-  // args: {
-  //   position: "left"
-  // },
+  argTypes: {
+    position: {
+      control: "select",
+      options: ["top", "right", "bottom", "left"],
+    }
+  },
+  args: {
+    position: "left"
+  },
 };
 
 export default meta;
@@ -28,8 +28,11 @@ export default meta;
 type Story = StoryObj<typeof Slider>;
 
 export const Default: Story = {
-  render: () => {
-    return <Slider slides={fakeGoodImages} />;
+  render: ({position}) => {
+    return <Slider
+    slides={fakeGoodImages}
+    position={position}
+    />;
   },
   // args: {},
 };

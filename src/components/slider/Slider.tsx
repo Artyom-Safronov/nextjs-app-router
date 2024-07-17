@@ -14,10 +14,10 @@ type Position = "top" | "right" | "bottom" | "left";
 
 export type SliderPorps = {
   slides: Slide[];
-  position?: Position;
+  position: Position;
 };
 
-export const Slider = ({ slides, position = "left" }: SliderPorps) => {
+export const Slider = ({ slides, position }: SliderPorps) => {
   const imgRef = useRef<HTMLImageElement | null>(null);
 
   const onSelectSlide = (src: string) => {
@@ -29,14 +29,14 @@ export const Slider = ({ slides, position = "left" }: SliderPorps) => {
   return (
     <Box className={styles.cardImage}>
       <Stack
-        direction={"row"}
+        direction={directionMap[position].slider}
         spacing={2}
         justifyContent={"space-around"}
         alignItems={"center"}
       >
         <Stack
           className={styles.previewBlock}
-          direction={"column"}
+          direction={directionMap[position].thumbs}
           spacing={2}
           justifyContent={"space-around"}
         >
@@ -87,27 +87,27 @@ const Thumbnails = ({
   });
 };
 
-// const directionMap: Record<
-//   Position,
-//   {
-//     slider: "row" | "row-reverse" | "column" | "column-reverse",
-//     thumbs: "row" | "row-reverse" | "column" | "column-reverse",
-//   }
-// > = {
-//   top: {
-//     slider: "column",
-//     thumbs: "row",
-//   },
-//   right: {
-//     slider: "row-reverse",
-//     thumbs: "column",
-//   },
-//   bottom: {
-//     slider: "column-reverse",
-//     thumbs: "row",
-//   },
-//   left: {
-//     slider: "row",
-//     thumbs: "column",
-//   },
-// };
+const directionMap: Record<
+  Position,
+  {
+    slider: "row" | "row-reverse" | "column" | "column-reverse",
+    thumbs: "row" | "row-reverse" | "column" | "column-reverse",
+  }
+> = {
+  top: {
+    slider: "column",
+    thumbs: "row",
+  },
+  right: {
+    slider: "row-reverse",
+    thumbs: "column",
+  },
+  bottom: {
+    slider: "column-reverse",
+    thumbs: "row",
+  },
+  left: {
+    slider: "row",
+    thumbs: "column",
+  },
+};
