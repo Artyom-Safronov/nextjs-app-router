@@ -14,6 +14,7 @@ import {
 import { Select } from "../select/Select";
 import { useState } from "react";
 import { BaseModal } from "../base-modal/BaseModal";
+import { sizes } from "@/mock";
 
 export const SizeSelect = () => {
   const onSizeChartLinkClick = () => {};
@@ -90,32 +91,4 @@ const SizeChartModal = () => {
       </BaseModal>
     </div>
   );
-};
-
-export const sizes = {
-  xs: {
-    int: "xs",
-    us: 10,
-    eu: 11,
-  },
-  s: {
-    int: "s",
-    us: 10,
-    eu: 11,
-  },
-  m: {
-    int: "m",
-    us: 10,
-    eu: 11,
-  },
-  l: {
-    int: "l",
-    us: 10,
-    eu: 11,
-  },
-  xl: {
-    int: "xl",
-    us: 10,
-    eu: 11,
-  },
 };

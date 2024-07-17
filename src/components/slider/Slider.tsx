@@ -18,13 +18,7 @@ export type SliderPorps = {
 };
 
 export const Slider = ({ slides, position }: SliderPorps) => {
-  const imgRef = useRef<HTMLImageElement | null>(null);
-
-  const onSelectSlide = (src: string) => {
-    if (imgRef.current) {
-      imgRef.current.srcset = src;
-    }
-  };
+  const [imgSrc, setImgSrc] = useState<string>(slides[0].fullImageSrc);
 
   return (
     <Box className={styles.cardImage}>
@@ -40,14 +34,13 @@ export const Slider = ({ slides, position }: SliderPorps) => {
           spacing={2}
           justifyContent={"space-around"}
         >
-          <Thumbnails slides={slides} onSelect={onSelectSlide} />
+          <Thumbnails slides={slides} onSelect={setImgSrc} />
         </Stack>
         <Image
-          src={slides[0].fullImageSrc}
+          src={imgSrc}
           alt={"Next Image"}
           width={640}
           height={480}
-          ref={imgRef}
         />
       </Stack>
     </Box>

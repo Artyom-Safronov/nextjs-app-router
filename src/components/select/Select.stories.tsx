@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Select } from "./Select";
-import { Link } from "@mui/material";
+import { Box, Link } from "@mui/material";
 
 const meta: Meta<typeof Select> = {
   title: "Select",
@@ -9,7 +9,9 @@ const meta: Meta<typeof Select> = {
     layout: "centered",
     controls: {},
   },
-  decorators: [],
+  decorators: [
+    (Story) => <Box width={300}>{Story()}</Box>
+  ],
   args: {
     options: [
       { id: "First option", label: "First option" },

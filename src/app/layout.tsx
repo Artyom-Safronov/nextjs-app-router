@@ -3,6 +3,10 @@ import "./globals.css";
 import { Container } from "@mui/material";
 import styles from "./styles.module.scss";
 import { inter } from "@/font";
+import { ThemeProvider } from "@mui/material/styles";
+import theme from "./theme";
+import { Footer } from "@/components/layout/footer/Footer";
+import { Header } from "@/components/layout/header/Header";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,25 +21,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Header />
-        <div className={styles.wrapper}>
-          <Content>
-            <Container>{children}</Container>
-          </Content>
-          <Footer />
-        </div>
+        <ThemeProvider theme={theme}>
+          <Header />
+          <div className={styles.wrapper}>
+            <Content>
+              <Container>{children}</Container>
+            </Content>
+            <Footer />
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );
 }
-
-const Header = () => {
-  return (
-    <header className={styles.header}>
-      <Container>Header</Container>
-    </header>
-  );
-};
 
 type ContentProps = {
   children: JSX.Element;
@@ -43,12 +41,4 @@ type ContentProps = {
 
 const Content = ({ children }: ContentProps) => {
   return <div className={styles.page}>{children}</div>;
-};
-
-const Footer = () => {
-  return (
-    <footer className={styles.footer}>
-      <Container>Footer</Container>
-    </footer>
-  );
 };

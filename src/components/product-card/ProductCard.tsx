@@ -1,7 +1,6 @@
 import { Modal, Box, Typography } from "@mui/material";
 import styles from "./styles.module.scss";
 import Image from "next/image";
-import { fakeGoods } from "@/app/card/[id]/page";
 import { Price } from "../price/price";
 
 type ProductCardProps = {

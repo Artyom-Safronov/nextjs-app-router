@@ -14,7 +14,7 @@ export const GoodFingerprint = ({ brand, name }: GoodFingerprintProps) => {
       >
         {brand}
       </Typography>
-      <Typography variant="h4" fontWeight={500} textTransform={"uppercase"}>
+      <Typography variant="h4" fontWeight={500} textTransform={"uppercase"} mt={1}>
         {name}
       </Typography>
     </>

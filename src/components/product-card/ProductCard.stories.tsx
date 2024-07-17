@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { ProductCard } from "./ProductCard";
 import { Box } from "@mui/material";
-import { fakeGoods } from "@/app/card/[id]/page";
+import { fakeGoods } from "@/mock";
 
 const meta: Meta<typeof ProductCard> = {
   title: "ProductCard",

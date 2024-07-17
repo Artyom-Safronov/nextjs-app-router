@@ -21,7 +21,7 @@ type SelectProps = {
 
 export const Select = ({ label, link, options }: SelectProps) => {
   return (
-    <Box width={200}>
+    <Box>
       <Stack direction={"row"} justifyContent={"space-between"}>
         <Typography variant="caption">{label}</Typography>
         {link && link}
@@ -35,7 +35,7 @@ export const Select = ({ label, link, options }: SelectProps) => {
         >
           {options.map((option) => {
             return (
-              <MenuItem value={option.label}>{option.label}</MenuItem>
+              <MenuItem value={option.label} key={option.label}>{option.label}</MenuItem>
             )
           })}
         </MuiSelect>

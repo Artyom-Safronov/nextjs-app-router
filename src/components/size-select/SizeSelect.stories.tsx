@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { SizeSelect } from "./SizeSelect";
-import { Link } from "@mui/material";
+import { Box, Link } from "@mui/material";
 
 const meta: Meta<typeof SizeSelect> = {
   title: "SizeSelect",
@@ -9,7 +9,9 @@ const meta: Meta<typeof SizeSelect> = {
     layout: "centered",
     controls: {},
   },
-  decorators: [],
+  decorators: [
+    (Story) => <Box width={300}>{Story()}</Box>
+  ],
   args: {
     options: [
       { id: "First option", label: "First option" },

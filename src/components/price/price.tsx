@@ -21,26 +21,23 @@ const currency = {
 export const Price = ({ value, oldPrice, short = true }: PriceProps) => {
   return (
     <div className={styles.priceContainer}>
-      {/* <span className={styles.mainPrice}>
-        <span>{currency.usd.short}</span>
-        <span>{value}</span>
-      </span>
-      {oldPrice && <sup className={styles.oldPrice}>{currency.usd.short}{oldPrice}</sup>} */}
       <Typography variant="h4" component={"span"}>
         {currency.usd.short}
         {value}
       </Typography>
-      <Typography
-        className={styles.oldPrice}
-        variant="caption"
-        component={"sup"}
-        sx={{
-          color: "grey.600"
-        }}
-      >
-        {currency.usd.short}
-        {oldPrice}
-      </Typography>
+      {oldPrice && (
+        <Typography
+          className={styles.oldPrice}
+          variant="caption"
+          component={"sup"}
+          sx={{
+            color: "grey.600",
+          }}
+        >
+          {currency.usd.short}
+          {oldPrice}
+        </Typography>
+      )}
     </div>
   );
 };
