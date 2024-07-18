@@ -1,7 +1,7 @@
 import { Container, Grid, Stack } from "@mui/material";
 import styles from "./styles.module.scss";
 import { SuggestionList } from "./SuggestionList";
-import { bestSelleres } from "@/mock";
+import { bestSelleres, newReleases } from "@/mock";
 
 export const Footer = () => {
   return (
@@ -9,16 +9,16 @@ export const Footer = () => {
       <Container>
         <Grid container spacing={2}>
           <Grid xs={2}>
-            <SuggestionList title="Best Sellers" suggestions={bestSelleres} />
+            <SuggestionList title="Best Sellers" suggestions={newReleases} />
           </Grid>
           <Grid xs={2}>
-            <SuggestionList title="Best Sellers" suggestions={bestSelleres} />
+            <SuggestionList title="New Releases" suggestions={newReleases} />
           </Grid>
           <Grid xs={2}>
-            <SuggestionList title="Best Sellers" suggestions={bestSelleres} />
+            <SuggestionList title="About Us" suggestions={bestSelleres} />
           </Grid>
           <Grid xs={2}>
-            <SuggestionList title="Best Sellers" suggestions={bestSelleres} />
+            <SuggestionList title="Support" suggestions={bestSelleres} />
           </Grid>
           <Grid xs={4}></Grid>
         </Grid>

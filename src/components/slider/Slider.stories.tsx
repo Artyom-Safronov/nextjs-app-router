@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Slider } from "./Slider";
-import { fakeGoodImages } from "@/app/card/[id]/page";
+import { fakeGoodImages } from "@/mock";
 
 const meta: Meta<typeof Slider> = {
   title: "Slider",

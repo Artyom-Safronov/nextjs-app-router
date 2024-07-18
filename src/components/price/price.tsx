@@ -1,8 +1,10 @@
 import { Typography } from "@mui/material";
 import styles from "./styles.module.scss";
+import { Variant } from "@mui/material/styles/createTypography";
 
 type PriceProps = {
   value: string;
+  variant?: Variant;
   oldPrice?: string;
   short?: boolean;
 };
@@ -18,10 +20,10 @@ const currency = {
   },
 };
 
-export const Price = ({ value, oldPrice, short = true }: PriceProps) => {
+export const Price = ({ value, oldPrice, short = true, variant = 'h4'}: PriceProps) => {
   return (
     <div className={styles.priceContainer}>
-      <Typography variant="h4" component={"span"}>
+      <Typography variant={variant} component={"span"}>
         {currency.usd.short}
         {value}
       </Typography>

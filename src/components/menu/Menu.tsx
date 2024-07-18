@@ -21,7 +21,7 @@ export const Menu = ({ items }: MenuProps) => {
       >
         {items?.map((item) => {
           return (
-            <Link href={item.link} className={styles.link}>
+            <Link href={item.link} className={styles.link} key={item.link}>
               <ButtonBase>
                 <Typography py={1} px={2}>
                   {item.label}

@@ -1,10 +1,16 @@
-.modalContent {
+.modal {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 8px;
   padding: 12px;
+  padding-right: 0;
   box-sizing: border-box;
+  overflow: hidden;
+}
+
+.modalContent {
+  height: 100%;
   overflow: auto;
 }

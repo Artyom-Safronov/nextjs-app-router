@@ -25,3 +25,19 @@ export const Default: Story = {
   },
   args: {},
 };
+
+export const NewPrice: Story = {
+  args: {
+    value: "1001111",
+    oldPrice: "200"
+  },
+
+  render: (
+    {
+      value,
+      oldPrice
+    }
+  ) => {
+    return <Price value={value} oldPrice={oldPrice} />;
+  }
+};

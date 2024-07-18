@@ -15,14 +15,13 @@ const groupedGoods = fakeGoods.reduce<any[][]>((acc, cur, index) => {
 
 const Page = () => {
   return (
-    <Box>
-      <Typography variant="h5">Page</Typography>
+    <Box my={5}>
       {groupedGoods.map((group) => {
         return (
-          <Grid container spacing={2}>
+          <Grid container spacing={2} key={group[0].name}>
             {group.map((element, index) => {
               return (
-                <Grid item xs={3}>
+                <Grid item xs={3} key={element.name}>
                   <Link href={`/card/${index}`}>
                     <ProductCard key={element.name} {...element} />
                   </Link>

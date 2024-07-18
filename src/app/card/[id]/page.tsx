@@ -6,20 +6,9 @@ import { Price } from "@/components/price/price";
 import { TruncatedText } from "@/components/truncated-text/TruncatedText";
 import { SizeSelect } from "@/components/size-select/SizeSelect";
 import { ProductCard } from "@/components/product-card/ProductCard";
-import { fakeGoods } from "@/mock";
+import { fakeGoodImages, fakeGoods } from "@/mock";
 import { AdvantageCard } from "@/components/advantage-card/AdvantageCard";
 import ThumbUpIcon from "@mui/icons-material/ThumbUpOutlined";
-
-export const fakeGoodImages: Slide[] = Array(4)
-  .fill(null)
-  .map((element) => {
-    // const image = faker.image.urlPicsumPhotos({ blur: 1, grayscale: true });
-    const image = "/nike-1.png";
-    return {
-      thumbnailSrc: image,
-      fullImageSrc: image,
-    };
-  });
 
 const Card = () => {
   return (
@@ -108,7 +97,7 @@ const Card = () => {
           marginBottom={8}
         >
           {fakeGoods.slice(0, 4).map((good) => {
-            return <ProductCard {...good} />;
+            return <ProductCard key={good.name} {...good} />;
           })}
         </Stack>
       </Box>

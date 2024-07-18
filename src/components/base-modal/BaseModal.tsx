@@ -4,10 +4,10 @@ import styles from "./styles.module.scss";
 type BaseModalProps = {
   open: boolean;
   onClose: () => void;
-  children: JSX.Element
-}
+  children: JSX.Element;
+};
 
-export const BaseModal = ({open, onClose, children}: BaseModalProps) => {
+export const BaseModal = ({ open, onClose, children }: BaseModalProps) => {
   return (
     <Modal
       open={open}
@@ -15,9 +15,16 @@ export const BaseModal = ({open, onClose, children}: BaseModalProps) => {
       aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description"
       disableAutoFocus
-    >
-      <Box width={400} height={300} bgcolor={"background.default"} className={styles.modalContent}>
-        {children}
+      >
+      <Box
+        width={400}
+        height={300}
+        bgcolor={"background.default"}
+        className={styles.modal}
+      >
+        <Box className={styles.modalContent}>
+          <Box>{children}</Box>
+        </Box>
       </Box>
     </Modal>
   );

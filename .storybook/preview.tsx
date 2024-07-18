@@ -1,6 +1,7 @@
-import React from 'react';
+import React from "react";
 import type { Preview } from "@storybook/react";
-import { inter } from "../font";
+import theme from "../src/app/theme"
+import { ThemeProvider } from "@mui/material";
 
 const preview: Preview = {
   parameters: {
@@ -17,11 +18,13 @@ const preview: Preview = {
     (Story) => {
       return (
         // <body className={inter.className}>
-          <Story />
+          <ThemeProvider theme={theme}>
+            <Story />
+          </ThemeProvider>
         // </body>
-      )
-    }
-  ]
+      );
+    },
+  ],
 };
 
 export default preview;
